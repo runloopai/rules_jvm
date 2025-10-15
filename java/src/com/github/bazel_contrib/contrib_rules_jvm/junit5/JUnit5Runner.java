@@ -132,8 +132,6 @@ public class JUnit5Runner {
 
   private static void exit(SystemExitToggle toggle, int value) {
     toggle.allow();
-    if (value != 0) {
-      System.exit(value);
-    }
+    System.exit(value);
   }
 }

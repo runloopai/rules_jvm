@@ -37,6 +37,10 @@ public class SystemExitDetectingShutdownHook {
                   && frame.getClassName().equals("java.lang.Runtime")
                   && frame.getMethodName().equals("exit")) {
                 foundRuntimeExitInThisThread = true;
+              } else if (frame.getClassName().contains("JUnit5Runner")
+                  && frame.getMethodName().contains("exit")) {
+                // Expected.
+                return;
               }
               if (foundRuntimeExitInThisThread) {
                 framesStartingWithRuntimeExit.add(frameString(frame));

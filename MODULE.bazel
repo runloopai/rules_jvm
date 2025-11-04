@@ -108,7 +108,7 @@ maven.install(
         "com.puppycrawl.tools:checkstyle:10.20.2",
 
         # PMD deps
-        "net.sourceforge.pmd:pmd-dist:7.8.0",
+        "net.sourceforge.pmd:pmd-dist:7.20.0",
 
         # Spotbugs deps
         "org.slf4j:slf4j-api:%s" % slf4j_version,

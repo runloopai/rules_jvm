@@ -117,6 +117,9 @@ maven.install(
         # For Kotlin parsing in the Gazelle plugin
         "org.jetbrains.kotlin:kotlin-compiler:2.2.20",
 
+	    # Need to upgrade asm to 9.9 to support Java 24
+        "org.ow2.asm:asm:9.9",
+
         # We explicitly declare a protobuf runtime version
         # so that it coincides with the one we use to generate the code.
         "com.google.protobuf:protobuf-java:{}".format(PROTOBUF_JAVA_VERSION),

@@ -73,7 +73,7 @@ IO_GRPC_GRPC_JAVA_ARTIFACTS = [
 
 slf4j_version = "1.7.32"
 
-spotbugs_version = "4.8.6"
+spotbugs_version = "4.9.8"
 
 maven.install(
     name = "contrib_rules_jvm_deps",

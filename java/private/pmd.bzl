@@ -21,13 +21,13 @@ def _pmd_test_impl(ctx):
     file_list = ctx.actions.declare_file("%s-pmd-srcs" % ctx.label.name)
     ctx.actions.write(
         file_list,
-        ",".join([src.path for src in ctx.files.srcs]),
+        ",".join([src.short_path for src in ctx.files.srcs]),
     )
     cmd.extend(["--file-list", file_list.short_path])
     inputs.extend(ctx.files.srcs)
     inputs.append(file_list)
 
-    cmd.extend(["-R", ",".join([rs.path for rs in pmd_info.rulesets.to_list()])])
+    cmd.extend(["-R", ",".join([rs.short_path for rs in pmd_info.rulesets.to_list()])])
     inputs.extend(pmd_info.rulesets.to_list())
 
     cmd.extend(["-f", pmd_info.format])

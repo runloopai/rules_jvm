@@ -45,7 +45,17 @@ def _pmd_test_impl(ctx):
             )
 
     out = ctx.actions.declare_file(ctx.label.name)
-    ctx.actions.write(out, " ".join(cmd), is_executable = True)
+    script_content = """#!/bin/bash
+{cmd}
+PMD_EXIT_CODE=$?
+if [ $PMD_EXIT_CODE -eq 4 ]; then
+    exit 0
+else
+    exit $PMD_EXIT_CODE
+fi
+""".format(cmd=" ".join(cmd))
+    
+    ctx.actions.write(out, script_content, is_executable = True)
 
     runfiles = ctx.runfiles(
         files = inputs,

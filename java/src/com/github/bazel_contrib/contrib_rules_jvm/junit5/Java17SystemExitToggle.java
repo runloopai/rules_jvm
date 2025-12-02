@@ -13,6 +13,7 @@ public class Java17SystemExitToggle implements SystemExitToggle {
     suppressSecurityManagerWarning();
   }
 
+  @SuppressWarnings("removal")
   private void suppressSecurityManagerWarning() throws ReflectiveOperationException {
     Class<?> holderClazz = Class.forName("java.lang.System$CallersHolder");
     Field callersField = holderClazz.getDeclaredField("callers");

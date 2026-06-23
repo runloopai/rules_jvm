@@ -251,15 +251,15 @@
     },
     "com.github.spotbugs:spotbugs": {
       "shasums": {
-        "jar": "69fde8787971a26b2372d416015d806bf7df4f847f7121bd5eeef239324cf180"
+        "jar": "46f5c9524c08d027cf96cda2704e5d8ded633626b94a19dc9ced3ae67595d80b"
       },
-      "version": "4.8.6"
+      "version": "4.10.2"
     },
     "com.github.spotbugs:spotbugs-annotations": {
       "shasums": {
-        "jar": "4548b74a815ed44f5480ca4f06204a8b00809dc7e5f6a825a9edf18f40377b65"
+        "jar": "5335e5107c74cdd62ef96a7908066c51abb3de63b1ebf99dc953c2c7d0747678"
       },
-      "version": "4.8.6"
+      "version": "4.10.2"
     },
     "com.github.stephenc.jcip:jcip-annotations": {
       "shasums": {
@@ -677,51 +677,51 @@
     },
     "net.sourceforge.pmd:pmd-ant": {
       "shasums": {
-        "jar": "37cfe3897e76b2eac4461fa0834244ddb15aa6e84b597b697cdc7e74fc6fa961"
+        "jar": "16a7ff0fed0f31d2746d9954883fbe936b88740f6a72caa6bf9ff957c1ae4d62"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-apex": {
       "shasums": {
-        "jar": "7e287b05f26dca93079bc979a3860c39b1bb1a7deb8ba9904377e4a67f091ddc"
+        "jar": "5ed787870d5b82923329568c5188a750b262b59d425cf6bfed6f2a678f6492e1"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-cli": {
       "shasums": {
-        "jar": "f42941cd098e18344777e7b81a52312409771e72420212f05057ac4de195b87f"
+        "jar": "fd304a3a0a6bbc386706d07bc8bcce16211a10bd76c8a51a440a8fc33ff546d3"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-coco": {
       "shasums": {
-        "jar": "e37e73424a7847d88a78bec685e5b0abf7948d05e4381147947784132c1f6f93"
+        "jar": "2f8bd947607a811bb46c0776aa18919df0c20629be3a7cc368cd13a3fad4bc2c"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-core": {
       "shasums": {
-        "jar": "04bb9601de46992448cd25381f84a2559b9e2fa689e5886a18486ec47f40153e"
+        "jar": "eb11a97f4bf92a22e7e59151f4d0fb5231424eea22fec7cf525c3ad502854277"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-cpp": {
       "shasums": {
-        "jar": "1f3d4905ec15686e2de63a4d50e6222efa5edd808880e3555debf5e6b9f7d875"
+        "jar": "c391ae941af896cc5f2737d31b7a630a763d1cf9e7a28f91f4848b1310a5218a"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-cs": {
       "shasums": {
-        "jar": "bb0c7ea6ebfbd1512e905c1536bb22e48cbbc44b14e6b3e6be4f1eb2c6c6a89b"
+        "jar": "95fb91e26a360b1b6153f49228de98768c7309b30684f0e562ca375719aa0a22"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-dart": {
       "shasums": {
-        "jar": "0c73b0f7add4c840af616a445f17ee074fd636e435748d54f79d47738f7cb7d0"
+        "jar": "d2d6438d69d36b57dc0ff9d1c2ec32e404391530bae92c623c4ecfc55cc4b020"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-designer": {
       "shasums": {
@@ -731,165 +731,165 @@
     },
     "net.sourceforge.pmd:pmd-dist": {
       "shasums": {
-        "jar": "af2cbcb5c3806f7a4af29b1157c4805ce335c7392d54d8dda832206fef9a68ce"
+        "jar": "684643c95878a760452be53d775bc086f1496d31e634e3e697702ba01409be7a"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-fortran": {
       "shasums": {
-        "jar": "0e6520a43e5f162ae3ab3cc9316e389a5a429edc25e40d24ed90eb6a6dde7d57"
+        "jar": "3031b531db8c0526655d8eb0caf0a1c4fac04d9a10dbe981295bc732c257786b"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-gherkin": {
       "shasums": {
-        "jar": "75c3555ace500c869be2558ce352f5d0cecf8df1bbe755ad568228619f0c6163"
+        "jar": "b1424ea51ff4937ac1ef96c688850c576b9da6ebb8cdbf29eb5733819a742668"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-go": {
       "shasums": {
-        "jar": "d1be28c3b4ffb5e288ad554f17c3a3c4c60a98b2958a567f47044a524b27a839"
+        "jar": "775a52bca89ee8354689f9f19fe1818d2c6cf1528c8e53301104d6f42acd4350"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-groovy": {
       "shasums": {
-        "jar": "77ef43a284e42793e776ac1641494994128a9bdbc39b3b45298394acab389cfb"
+        "jar": "c498080c45f642618fda20929ea61768f86490d04dc63718ed15ef4681ac5601"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-html": {
       "shasums": {
-        "jar": "19699e3bb9f676bbb092cc976887bab2a9d3dafbf9533ae6f12b486fd858ea70"
+        "jar": "a64fb9e9f20285b05b7f444c0277e70338155e746b33b64739910119188055e3"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-java": {
       "shasums": {
-        "jar": "a3d377f75124bea31032e37d058375510992dac632cfa71f83f0347ca7b894c1"
+        "jar": "2adbdab917049fcc3809bf1ff3bf136d7ba00a30b751d1b1f2e2085ad2fa8b6e"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-javascript": {
       "shasums": {
-        "jar": "47a3158c4e0c228ef6bae287348c819a463d0a91f4b7fb3caac74a11a2bbdd1d"
+        "jar": "b89800c99db92d174204ea919dd8aef4bf6a5b9261e15ba3d2de7e683642d868"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-jsp": {
       "shasums": {
-        "jar": "d479b49265df4a74b87667c6b79fa8554eed63d9b934a999d16d15636c3a92e3"
+        "jar": "eeeb0e0e33c045154fc309d20237029989aa6b73beca9803df496e65c5a29f9a"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-julia": {
       "shasums": {
-        "jar": "ab610c65e540597bf9680d33ddc003e8bc89f6ed645db9ab5039dda4b701da3d"
+        "jar": "7b0ee31745d0f440a546f83de57fa11a5893c876fa38a3eaa84b8bfe359415ee"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-kotlin": {
       "shasums": {
-        "jar": "93805ca9d8bf71713349e0e7954b98586958afc59576f3f9d9958da895a5297e"
+        "jar": "1ea74d48850f78091fced85fa04efec7a86cc6445d499ae277832d0c1b81e08b"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-languages-deps": {
       "shasums": {
         "jar": null
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-lua": {
       "shasums": {
-        "jar": "9dd70d2eebe2055a41f78971487d47d8754f5d3052eb869327cd651bc5f5aa02"
+        "jar": "8b420935dfbaeac9354ca853ab165cc7c54d14ca6436fcb76ff216d91eb4e0f9"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-matlab": {
       "shasums": {
-        "jar": "94364fc2820870ac0b60f464349c3c63700c6ac177e831f6fcd4b23bc6b58daf"
+        "jar": "5885e369096a084509787388574ab6118b3c7adae773148c72a806a06cd21817"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-modelica": {
       "shasums": {
-        "jar": "c1721801c6848b228fd2df9379b20a65f78a5ded541a68d380026ae8a1e4ea36"
+        "jar": "222ae4c8a3e6a8e390e6a42280d01afc3d91e05a228d6f6124077a3b58ee9fb1"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-objectivec": {
       "shasums": {
-        "jar": "f269a37670933aa33ed99f0f9ea5faa15588db4764544f1e38238b6e406b28ad"
+        "jar": "a3b620a4eced9f66c11f96c47380040cd24fbbb61d21c56f5be8b4aad76cace5"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-perl": {
       "shasums": {
-        "jar": "e2af566f44d6985b03763135a324910305d3a2ec96482a474ae7a530b63a04f1"
+        "jar": "29924ec40b5796459ef305b03efb17871cbfc451244a7c26554794c1dbe84a04"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-php": {
       "shasums": {
-        "jar": "bd146c78ede1673efd19267bc997e97d1ce177379c9e8c37d2049a70cc759c9e"
+        "jar": "15a828de2a5e745f8b4d3b3520e2ea8963ae8faa4aaef320637901e690e2a8dd"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-plsql": {
       "shasums": {
-        "jar": "0bb43d71531a9fcca218129d7d49581a586886fd5767b542dcb9719ad2e33bd8"
+        "jar": "660c2f81be9d3200ae021e0c2054617c24a7a341612a89e2c574b739bffbf4ad"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-python": {
       "shasums": {
-        "jar": "163e49c5c53726a06cb77feebde9d0fe66a27ed1cd6af5d7b168e8d60426e909"
+        "jar": "3c06bd0f9b2f2b1ebc33c58a3fa51e24d3998b34acf0bd2c354577f0660e0ce1"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-ruby": {
       "shasums": {
-        "jar": "cca6a107ea4a27701f8b4e911474b7d2715de50a278f227ed23e55d053656370"
+        "jar": "a974965d433e2b48d614b0cfc4addeea4816a6f700081c49c13d972f001c877f"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-scala_2.13": {
       "shasums": {
-        "jar": "4cf29775af75d515bb1baa6f5393851d8261f83e7a476431d0b4fcc12f491fee"
+        "jar": "543d57ec2855bc69ad92932735ba115c8a7b61c45a1c39667851d8a050d51be7"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-swift": {
       "shasums": {
-        "jar": "a92d81b11c485f180ddec4aff6bf13dcb07e22a39516719849e37f6ae8ac717f"
+        "jar": "0c0dbebb7f4a1d732dd4a8d7366e4959f3b0dc368b5eda1c383c870cda47f017"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-tsql": {
       "shasums": {
-        "jar": "1ccfced4ec72ea5de6a778cbcaf8210866b37f781ca5fb5ec9b2238267a8e350"
+        "jar": "3039a055f53ccf712fe23e38fb7b469f59e110508ff3aab712828ded48d04e1b"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-velocity": {
       "shasums": {
-        "jar": "7bf199f75e578df66eafdd062db0576049a8eb986f30a730ac44b504b1e31ef3"
+        "jar": "67c46a74122ba1481250d2b193f8ea6e0e7376b643bf5a2149bbc698c7819c60"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-visualforce": {
       "shasums": {
-        "jar": "49e5d8a22cebc1d0fbae3457f16e4d86fdd9f83ace6204bda5cdba8532cc0efc"
+        "jar": "66a32a79d787efb2d54b0d3caa9e62938720d9a8737ae83fd0534bbff3aa919e"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "net.sourceforge.pmd:pmd-xml": {
       "shasums": {
-        "jar": "fc264cf35a4d40a7238e656ab064a5f6008c03acff05966362c5ba577921a84d"
+        "jar": "62123198f62cc612e0178621179e7b2867c4f1ad7c6b4db6dafdc3f7df1c8895"
       },
-      "version": "7.8.0"
+      "version": "7.25.0"
     },
     "org.antlr:antlr4-runtime": {
       "shasums": {
@@ -1199,33 +1199,33 @@
     },
     "org.ow2.asm:asm": {
       "shasums": {
-        "jar": "8cadd43ac5eb6d09de05faecca38b917a040bb9139c7edeb4cc81c740b713281"
+        "jar": "03d99a74ad1ee5c71334ef67437f4ef4fe3488caa7c96d8645abc73c8e2017d4"
       },
-      "version": "9.7.1"
+      "version": "9.9"
     },
     "org.ow2.asm:asm-analysis": {
       "shasums": {
-        "jar": "7bc6bcbc21379948a0c8c467fb0f864206e5b818f6bc0b546872f5c9f941556f"
+        "jar": "6a15d28e8bd29ba4fd5bca4baf9b50e8fba2d7b51fbf78cfa0c875a7214c678b"
       },
-      "version": "9.7"
+      "version": "9.9"
     },
     "org.ow2.asm:asm-commons": {
       "shasums": {
-        "jar": "389bc247958e049fc9a0408d398c92c6d370c18035120395d4cba1d9d9304b7a"
+        "jar": "db2f6f26150bbe7c126606b4a1151836bcc22a1e05a423b3585698bece995ff8"
       },
-      "version": "9.7"
+      "version": "9.9"
     },
     "org.ow2.asm:asm-tree": {
       "shasums": {
-        "jar": "62f4b3bc436045c1acb5c3ba2d8ec556ec3369093d7f5d06c747eb04b56d52b1"
+        "jar": "42178f3775c9c63f9e5e1446747d29b4eca4d91bd6e75e5c43cfa372a47d38c6"
       },
-      "version": "9.7"
+      "version": "9.9"
     },
     "org.ow2.asm:asm-util": {
       "shasums": {
-        "jar": "37a6414d36641973f1af104937c95d6d921b2ddb4d612c66c5a9f2b13fc14211"
+        "jar": "3842e13cfe324ee9ab7cdc4914be9943541ead397c17e26daf0b8a755bede717"
       },
-      "version": "9.7"
+      "version": "9.9"
     },
     "org.pcollections:pcollections": {
       "shasums": {
@@ -1355,7 +1355,6 @@
     "org.junit.platform:junit-platform-launcher": "org.junit.platform:junit-platform-launcher:1.11.3",
     "org.junit.platform:junit-platform-reporting": "org.junit.platform:junit-platform-reporting:1.11.3",
     "org.junit.vintage:junit-vintage-engine": "org.junit.vintage:junit-vintage-engine:5.11.3",
-    "org.ow2.asm:asm:9.7": "org.ow2.asm:asm:9.7.1",
     "org.scala-lang.modules:scala-collection-compat_2.13:2.8.1": "org.scala-lang.modules:scala-collection-compat_2.13:2.11.0",
     "org.scala-lang:scala-library:2.13.11": "org.scala-lang:scala-library:2.13.13",
     "org.slf4j:slf4j-api:1.7.25": "org.slf4j:slf4j-api:1.7.36",
@@ -2483,16 +2482,16 @@
       "org/jline/terminal/": [],
       "org/jline/terminal/provider/": [],
       "org/jline/terminal/provider/exec": [
-        "class\u003dorg.jline.terminal.impl.exec.ExecTerminalProvider"
+        "class=org.jline.terminal.impl.exec.ExecTerminalProvider"
       ],
       "org/jline/terminal/provider/jansi": [
-        "class\u003dorg.jline.terminal.impl.jansi.JansiTerminalProvider"
+        "class=org.jline.terminal.impl.jansi.JansiTerminalProvider"
       ],
       "org/jline/terminal/provider/jna": [
-        "class\u003dorg.jline.terminal.impl.jna.JnaTerminalProvider"
+        "class=org.jline.terminal.impl.jna.JnaTerminalProvider"
       ],
       "org/jline/terminal/provider/jni": [
-        "class\u003dorg.jline.terminal.impl.jni.JniTerminalProvider"
+        "class=org.jline.terminal.impl.jni.JniTerminalProvider"
       ]
     },
     "org.jetbrains.kotlin:kotlin-reflect": {

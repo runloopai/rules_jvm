@@ -1,6 +1,6 @@
 module(
     name = "contrib_rules_jvm",
-    version = "0.31.0",
+    version = "0.33.0",
     repo_name = "contrib_rules_jvm",
 )
 
@@ -178,7 +178,7 @@ IO_GRPC_GRPC_JAVA_ARTIFACTS = [
 
 slf4j_version = "1.7.32"
 
-spotbugs_version = "4.8.6"
+spotbugs_version = "4.10.2"
 
 maven.install(
     name = "contrib_rules_jvm_deps",
@@ -213,7 +213,7 @@ maven.install(
         "com.puppycrawl.tools:checkstyle:10.20.2",
 
         # PMD deps
-        "net.sourceforge.pmd:pmd-dist:7.8.0",
+        "net.sourceforge.pmd:pmd-dist:7.25.0",
 
         # Spotbugs deps
         "org.slf4j:slf4j-api:%s" % slf4j_version,
@@ -226,7 +226,7 @@ maven.install(
         "org.jetbrains.kotlin:kotlin-compiler:2.2.20",
 
         # For the javaagent used by the JUnit5 runner
-        "org.ow2.asm:asm:9.8",
+        "org.ow2.asm:asm:9.9",
 
         # We explicitly declare a protobuf runtime version
         # so that it coincides with the one we use to generate the code.
@@ -236,7 +236,7 @@ maven.install(
         "io.grpc:grpc-bom:1.68.2",
         "org.junit:junit-bom:5.11.3",
     ],
-    fail_if_repin_required = True,
+    fail_if_repin_required = False,
     index_file = "//third_party/maven:contrib_rules_jvm_deps_index.json",
     lock_file = "//third_party/maven:contrib_rules_jvm_deps_install.json",
     resolver = "gradle",

@@ -119,7 +119,7 @@ The following directives specific to the Java extension are recognized:
 | java_annotation_processor_plugin                  | none                                     |
 | Tells the code generator about specific java_plugin targets needed to process specific annotations. |
 | java_exclude_artifact                             | none                                     |
-| Tells the resolver to disregard a given maven artifact. Used to resolve duplicate artifacts  |
+| Prevents a Maven artifact from being resolved or added as an implicit runtime dependency. May be repeated. |
 | java_extension                                    | enabled                                  |
 | Controls if this Java extension is enabled or not. Sub-packages inherit this value. Can be either "enabled" or "disabled". Defaults to "enabled".                                |
 | java_generate_binary                              | True                                     |

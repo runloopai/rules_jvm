@@ -21,6 +21,7 @@ func TestSingleJavaTestFile(t *testing.T) {
 	type testCase struct {
 		includePackageInName bool
 		importedPackages     []string
+		excludedArtifacts    []string
 		wrapper              string
 		wantRuleKind         string
 		wantImports          []string
@@ -120,6 +121,17 @@ func TestSingleJavaTestFile(t *testing.T) {
 				"@maven//:org_junit_platform_junit_platform_reporting",
 			},
 		},
+		"junit5 with excluded runtime dependency": {
+			includePackageInName: false,
+			importedPackages:     []string{"org.junit.jupiter.api"},
+			excludedArtifacts:    []string{"@maven//:org_junit_jupiter_junit_jupiter_engine"},
+			wantRuleKind:         "java_junit5_test",
+			wantImports:          []string{"com.example", "org.junit.jupiter.api"},
+			wantRuntimeDeps: []string{
+				"@maven//:org_junit_platform_junit_platform_launcher",
+				"@maven//:org_junit_platform_junit_platform_reporting",
+			},
+		},
 		"junitpioneer junit5": {
 			includePackageInName: false,
 			importedPackages:     []string{"org.junitpioneer.jupiter.cartesian"},
@@ -158,9 +170,13 @@ func TestSingleJavaTestFile(t *testing.T) {
 	} {
 		t.Run(name, func(t *testing.T) {
 			var res language.GenerateResult
+			excludedArtifacts := make(map[string]struct{}, len(tc.excludedArtifacts))
+			for _, artifact := range tc.excludedArtifacts {
+				excludedArtifacts[artifact] = struct{}{}
+			}
 
 			l := newTestJavaLang(t)
-			l.generateJavaTest(nil, "", "maven", f, tc.includePackageInName, stringsToPackageNames(tc.importedPackages), nil, nil, nil, tc.wrapper, nil, &res)
+			l.generateJavaTest(nil, "", "maven", excludedArtifacts, f, tc.includePackageInName, stringsToPackageNames(tc.importedPackages), nil, nil, nil, tc.wrapper, nil, &res)
 
 			require.Len(t, res.Gen, 1, "want 1 generated rule")
 
@@ -202,6 +218,7 @@ func TestSuite(t *testing.T) {
 	type testCase struct {
 		includePackageInName bool
 		importedPackages     []string
+		excludedArtifacts    []string
 		wantImports          []string
 		wantDeps             []string
 		wantRuntimeDeps      []string
@@ -248,12 +265,28 @@ func TestSuite(t *testing.T) {
 			},
 			wantRunner: "junit5",
 		},
+		"explicit both junit4 and junit5 with vintage excluded": {
+			includePackageInName: false,
+			importedPackages:     []string{"org.junit", "org.junit.jupiter.api"},
+			excludedArtifacts:    []string{"@maven//:org_junit_vintage_junit_vintage_engine"},
+			wantImports:          []string{"com.example", "org.junit", "org.junit.jupiter.api"},
+			wantRuntimeDeps: []string{
+				"@maven//:org_junit_jupiter_junit_jupiter_engine",
+				"@maven//:org_junit_platform_junit_platform_launcher",
+				"@maven//:org_junit_platform_junit_platform_reporting",
+			},
+			wantRunner: "junit5",
+		},
 	} {
 		t.Run(name, func(t *testing.T) {
 			var res language.GenerateResult
+			excludedArtifacts := make(map[string]struct{}, len(tc.excludedArtifacts))
+			for _, artifact := range tc.excludedArtifacts {
+				excludedArtifacts[artifact] = struct{}{}
+			}
 
 			l := newTestJavaLang(t)
-			l.generateJavaTestSuite(nil, "blah", []string{src}, stringsToPackageNames([]string{pkg}), "maven", stringsToPackageNames(tc.importedPackages), nil, nil, nil, false, &res)
+			l.generateJavaTestSuite(nil, "blah", []string{src}, stringsToPackageNames([]string{pkg}), "maven", excludedArtifacts, stringsToPackageNames(tc.importedPackages), nil, nil, nil, false, &res)
 
 			require.Len(t, res.Gen, 1, "want 1 generated rule")
 

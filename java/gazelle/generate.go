@@ -464,7 +464,7 @@ func (l javaLang) GenerateRules(args language.GenerateArgs) language.GenerateRes
 		case "file":
 			for _, tf := range testJavaFiles.SortedSlice() {
 				separateJavaTestReasons := separateTestJavaFiles[tf]
-				l.generateJavaTest(args.File, args.Rel, cfg.MavenRepositoryName(), tf, aggregateAtRoot, testJavaImportsWithHelpers, testJavaImportedClassesWithHelpers, annotationProcessorClasses, nil, separateJavaTestReasons.wrapper, separateJavaTestReasons.attributes, &res)
+				l.generateJavaTest(args.File, args.Rel, cfg.MavenRepositoryName(), cfg.ExcludedArtifacts(), tf, aggregateAtRoot, testJavaImportsWithHelpers, testJavaImportedClassesWithHelpers, annotationProcessorClasses, nil, separateJavaTestReasons.wrapper, separateJavaTestReasons.attributes, &res)
 			}
 
 		case "suite":
@@ -489,6 +489,7 @@ func (l javaLang) GenerateRules(args language.GenerateArgs) language.GenerateRes
 					srcs,
 					packageNames,
 					cfg.MavenRepositoryName(),
+					cfg.ExcludedArtifacts(),
 					testJavaImportsWithHelpers,
 					testJavaImportedClassesWithHelpers,
 					annotationProcessorClasses,
@@ -524,7 +525,7 @@ func (l javaLang) GenerateRules(args language.GenerateArgs) language.GenerateRes
 					testHelperDep = ptr(testHelperLibname(suiteName))
 				}
 				separateJavaTestReasons := separateTestJavaFiles[src]
-				l.generateJavaTest(args.File, args.Rel, cfg.MavenRepositoryName(), src, aggregateAtRoot, testJavaImportsWithHelpers, testJavaImportedClassesWithHelpers, annotationProcessorClasses, testHelperDep, separateJavaTestReasons.wrapper, separateJavaTestReasons.attributes, &res)
+				l.generateJavaTest(args.File, args.Rel, cfg.MavenRepositoryName(), cfg.ExcludedArtifacts(), src, aggregateAtRoot, testJavaImportsWithHelpers, testJavaImportedClassesWithHelpers, annotationProcessorClasses, testHelperDep, separateJavaTestReasons.wrapper, separateJavaTestReasons.attributes, &res)
 			}
 		}
 	}
@@ -1037,7 +1038,7 @@ func (l javaLang) generateJavaBinary(file *rule.File, m types.ClassName, libName
 	})
 }
 
-func (l javaLang) generateJavaTest(file *rule.File, pathToPackageRelativeToBazelWorkspace string, mavenRepositoryName string, f javaFile, includePackageInName bool, imports *sorted_set.SortedSet[types.PackageName], importedClasses *sorted_set.SortedSet[types.ClassName], annotationProcessorClasses *sorted_set.SortedSet[types.ClassName], depOnTestHelpers *string, wrapper string, extraAttributes map[string]bzl.Expr, res *language.GenerateResult) {
+func (l javaLang) generateJavaTest(file *rule.File, pathToPackageRelativeToBazelWorkspace string, mavenRepositoryName string, excludedArtifacts map[string]struct{}, f javaFile, includePackageInName bool, imports *sorted_set.SortedSet[types.PackageName], importedClasses *sorted_set.SortedSet[types.ClassName], annotationProcessorClasses *sorted_set.SortedSet[types.ClassName], depOnTestHelpers *string, wrapper string, extraAttributes map[string]bzl.Expr, res *language.GenerateResult) {
 	className := f.ClassName()
 	fullyQualifiedTestClass := className.FullyQualifiedClassName()
 	var testName string
@@ -1058,9 +1059,7 @@ func (l javaLang) generateJavaTest(file *rule.File, pathToPackageRelativeToBazel
 		// resolver to resolve this to an artifact, but we don't currently wire
 		// up the resolver to do this. We probably should.
 		// In the mean time, hard-code some labels.
-		for _, artifact := range junit5RuntimeDeps {
-			runtimeDeps.Add(maven.LabelFromArtifact(mavenRepositoryName, artifact))
-		}
+		addMavenRuntimeDeps(runtimeDeps, mavenRepositoryName, junit5RuntimeDeps, excludedArtifacts)
 	}
 
 	ruleKind := javaRuleKind
@@ -1126,7 +1125,16 @@ var junit5RuntimeDeps = []string{
 	"org.junit.platform:junit-platform-reporting",
 }
 
-func (l javaLang) generateJavaTestSuite(file *rule.File, name string, srcs []string, packageNames *sorted_set.SortedSet[types.PackageName], mavenRepositoryName string, imports *sorted_set.SortedSet[types.PackageName], importedClasses *sorted_set.SortedSet[types.ClassName], annotationProcessorClasses *sorted_set.SortedSet[types.ClassName], customTestSuffixes *[]string, hasHelpers bool, res *language.GenerateResult) {
+func addMavenRuntimeDeps(runtimeDeps *sorted_set.SortedSet[label.Label], mavenRepositoryName string, artifacts []string, excludedArtifacts map[string]struct{}) {
+	for _, artifact := range artifacts {
+		dep := maven.LabelFromArtifact(mavenRepositoryName, artifact)
+		if _, excluded := excludedArtifacts[dep.String()]; !excluded {
+			runtimeDeps.Add(dep)
+		}
+	}
+}
+
+func (l javaLang) generateJavaTestSuite(file *rule.File, name string, srcs []string, packageNames *sorted_set.SortedSet[types.PackageName], mavenRepositoryName string, excludedArtifacts map[string]struct{}, imports *sorted_set.SortedSet[types.PackageName], importedClasses *sorted_set.SortedSet[types.ClassName], annotationProcessorClasses *sorted_set.SortedSet[types.ClassName], customTestSuffixes *[]string, hasHelpers bool, res *language.GenerateResult) {
 	const ruleKind = "java_test_suite"
 	r := rule.NewRule(ruleKind, name)
 	r.SetAttr("srcs", srcs)
@@ -1141,11 +1149,9 @@ func (l javaLang) generateJavaTestSuite(file *rule.File, name string, srcs []str
 	runtimeDeps := l.collectRuntimeDeps(ruleKind, name, file)
 	if importsJunit5(imports) {
 		r.SetAttr("runner", "junit5")
-		for _, artifact := range junit5RuntimeDeps {
-			runtimeDeps.Add(maven.LabelFromArtifact(mavenRepositoryName, artifact))
-		}
+		addMavenRuntimeDeps(runtimeDeps, mavenRepositoryName, junit5RuntimeDeps, excludedArtifacts)
 		if importsJunit4(imports) {
-			runtimeDeps.Add(maven.LabelFromArtifact(mavenRepositoryName, "org.junit.vintage:junit-vintage-engine"))
+			addMavenRuntimeDeps(runtimeDeps, mavenRepositoryName, []string{"org.junit.vintage:junit-vintage-engine"}, excludedArtifacts)
 		}
 	}
 

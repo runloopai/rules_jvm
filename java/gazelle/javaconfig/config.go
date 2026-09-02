@@ -12,7 +12,7 @@ import (
 )
 
 const (
-	// JavaExcludeArtifact tells the resolver to disregard a given maven artifact.
+	// JavaExcludeArtifact prevents a Maven artifact from being resolved or added as an implicit runtime dependency.
 	// Can be repeated.
 	JavaExcludeArtifact = "java_exclude_artifact"
 
